@@ -12,7 +12,7 @@ pipeline{
 		stage('Building image') {
                            steps{
                            script {
-                                dockerImage = docker.build imagename
+                                sudo sh 'dockerImage = docker.build imagename'
                                    }
 			   }
 			
