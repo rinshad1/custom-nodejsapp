@@ -8,11 +8,20 @@ pipeline{
 	}
 
 	stages {
+		
+		stage('Cloning Git') {
+      			steps {
+        		git([url: 'https://github.com/rinshad1/custom-nodejsapp.git', branch: 'main'])
+ 
+     			 }
+   			 }
+		
+		
 
 		stage('Building image') {
                            steps{
 				   script {
-					   dockerImage = docker.build ${env.imagename}
+					   dockerImage = docker.build imagename
                                    }
 			   }
 			
