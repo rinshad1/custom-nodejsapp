@@ -3,8 +3,8 @@ pipeline{
 	agent any
 
 	environment {
-		imagename = "nodeapp"
-		registryCredential = 'dockerhub-cred-raja'
+		imagename = "rinshad11/nodeapp"
+		registryCredential = 'rinshad11'
 	}
 
 	stages {
@@ -13,8 +13,8 @@ pipeline{
       			steps {
         		git([url: 'https://github.com/rinshad1/custom-nodejsapp.git', branch: 'main'])
  
-     			 }
-   			 }
+     				   }
+   			   }
 		
 		
 
