@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'sudo docker build /var/lib/jenkins/workspace/docker-images -t nodeapp:latest .'
+				sh 'sudo docker build -t rinshad11/nodeapp:latest /var/lib/jenkins/workspace/docker-images'
 			}
 		}
 
