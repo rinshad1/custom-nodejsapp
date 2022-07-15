@@ -1,13 +1,13 @@
 pipeline{
 
-	agent any
+	
 
 	environment {
 		imagename = "rinshad11/nodeapp"
 		registryCredential = 'rinshad11'
 		dockerImage = ''
 	}
-
+	agent any
 	stages {
 		
 		stage('Cloning Git') {
