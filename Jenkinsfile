@@ -3,8 +3,8 @@ pipeline{
 	agent any
 
 	environment {
-		imagename = "kevalnagda/flaskapp"
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
+		imagename = "rinshad11/nodeapp"
+		registryCredential = 'dockerhub-cred-raja'
 	}
 
 	stages {
