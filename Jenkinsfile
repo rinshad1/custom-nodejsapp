@@ -3,16 +3,19 @@ pipeline{
 	agent any
 
 	environment {
+		imagename = "kevalnagda/flaskapp"
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
 	}
 
 	stages {
 
-		stage('Build') {
-
-			steps {
-				sh 'sudo docker build -t rinshad11/nodeapp:latest /var/lib/jenkins/workspace/docker-images'
-			}
+		stage('Building image') {
+                           steps{
+                           script {
+                                dockerImage = docker.build imagename
+                                   }
+			   }
+			
 		}
 
 		stage('Login') {
