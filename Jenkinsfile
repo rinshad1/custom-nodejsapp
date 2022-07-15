@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		imagename = "rinshad11/nodeapp"
+		imagename = "nodeapp"
 		registryCredential = 'dockerhub-cred-raja'
 	}
 
