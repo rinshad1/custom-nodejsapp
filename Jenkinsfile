@@ -5,6 +5,7 @@ pipeline{
 	environment {
 		imagename = "rinshad11/nodeapp"
 		registryCredential = 'rinshad11'
+		dockerImage = ''
 	}
 
 	stages {
