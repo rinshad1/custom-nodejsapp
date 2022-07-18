@@ -14,12 +14,12 @@ pipeline{
 		}
 
 		
-		  stage('Scan image') {
-			  steps {
-    		  anchore engineCredentialsId: 'fbc64e9a-9d15-4c52-9ad4-23535aa2af2e', engineurl: 'ec2-52-91-231-102.compute-1.amazonaws.com:8228/v1', name: 'anchore_images'
-  			}
-		
+		  node {
+ 		  def imageLine = 'rinshad11/nodeapp:latest'
+  		  writeFile file: 'anchore_images', text: imageLine
+  		  anchore name: 'my_image_file', engineCredentialsId: 'ubuntu'
 		  }
+		
 		stage('Login') {
 
 			steps {
