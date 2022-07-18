@@ -35,4 +35,10 @@ pipeline{
 		}
 	}
 
+	
+	node {
+  def imageLine = 'rinshad11/nodeapp:latest'
+  writeFile file: 'anchore_images', text: imageLine
+  anchore name: 'my_image_file', engineCredentialsId: 'ubuntu'
+}
 }
