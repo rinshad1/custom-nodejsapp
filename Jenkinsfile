@@ -14,7 +14,7 @@ pipeline{
 		}
 		stage('Run Vulnerability Scan') {
       			steps {
-        			sh 'grype java-docker:latest --scope AllLayers'
+        			sh 'grype rinshad11/nodeapp:latest --scope AllLayers --fail-on=critical'
     	  		}
     		}
     		stage('Finally done') {
