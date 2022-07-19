@@ -27,6 +27,12 @@ pipeline{
 				sh 'docker push rinshad11/nodeapp:latest'
 			}
 		}
+		stage('Remove Unused docker image') {
+      		steps{
+         		sh "docker rmi $imagename:latest"
+			}
+    		}
+	
 	}
 
 	post {
