@@ -12,7 +12,11 @@ pipeline{
 				sh 'docker build -t rinshad11/nodeapp:latest .'
 			}
 		}
-
+		stage('Run Vulnerability Scan') {
+     			 steps {
+        			sh 'grype rinshad11/nodeapp:latest --scope AllLayers'
+      			}
+    		}
 		
 		stage('Login') {
 
