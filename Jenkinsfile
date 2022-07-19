@@ -29,7 +29,7 @@ pipeline{
 		}
 		stage('Remove Unused docker image') {
       		steps{
-         		sh "docker rmi $imagename:latest"
+         		sh 'docker rmi rinshad11/nodeapp:latest'
 			}
     		}
 	
